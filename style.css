@@ -1,0 +1,322 @@
+:root {
+    --main-radius: 5px;
+    --main-padding: 20px;
+    --body-bg: rgb(246, 245, 245);
+    --text-color: rgb(54, 51, 51);
+    --nav-bg: #edebea;
+    --menu-link: rgb(0, 0, 0);
+    --paper-bg: rgb(255, 255, 255);
+    --paper-text: rgb(11, 11, 11);
+    --shadow-color: rgb(223, 222, 220);
+    --dropdown-bg: rgb(0, 0, 0);
+    --dropdown-text: rgb(176, 159, 159);
+    --footer-bg: #edebea;
+    --underline-color: rgb(54, 51, 51);
+}
+
+body.dark-theme {
+    --body-bg: #1c1c1c;
+    --text-color: #e0e0e0;
+    --nav-bg: #2c2c2c;
+    --menu-link: #ffffff;
+    --paper-bg: #333333;
+    --paper-text: #d0d0d0;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --dropdown-bg: #444444;
+    --dropdown-text: #bbbbbb;
+    --footer-bg: #2c2c2c;
+    --underline-color: #e0e0e0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+        "nav"
+        "about"
+        "papers"
+        "contact"
+        "footer";
+    min-height: 10vh;
+}
+
+nav {
+    grid-area: nav;
+}
+
+.nav-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: var(--nav-bg);
+    padding: 8px 16px;
+    align-items: center;
+    position: relative;
+}
+.hamburger {
+    display: none; 
+    cursor: pointer;
+    padding: 10px;
+}
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--menu-link);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+.menu > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+}
+.menu li {
+    position: relative;
+}
+.menu a {
+    text-decoration: none;
+    color: var(--menu-link);
+    font-size: 16px;
+    padding: 10px;
+    transition: 0.2s;
+    text-align: center;
+    display: block;
+}
+.menu a:hover {
+    border-bottom: 1px solid var(--menu-link);
+}
+.theme-toggle {
+    background-color: var(--paper-bg);
+    color: var(--paper-text);
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--main-radius);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.theme-toggle:hover {
+    background-color: var(--nav-bg);
+}
+.dropdownpapers {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    background-color: var(--dropdown-bg);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 300;
+}
+.menu li:hover .dropdownpapers {
+    display: block;
+}
+.dropdownpapers li {
+    display: block;
+}
+.dropdownpapers a {
+    display: block;
+    padding: 10px;
+    color: var(--dropdown-text);
+    text-align: left;
+}
+.photo {
+    text-align: center;
+    padding: var(--main-padding);
+}
+h1 {
+    text-align: center;
+    margin: 8px 0;
+    font-size: 32px;
+}
+.photo img {
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+}
+.about {
+    grid-area: about;
+    margin: var(--main-padding);
+    text-align: justify;
+    font-size: 16px;
+}
+.papers {
+    grid-area: papers;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: var(--main-padding);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.paper-title {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    border-bottom: 2px solid var(--underline-color);
+    padding-bottom: 5px;
+}
+.paper-box {
+    background-color: var(--paper-bg);
+    padding: 20px;
+    color: var(--paper-text);
+    border-radius: var(--main-radius);
+    box-shadow: 2px 2px 8px var(--shadow-color);
+    text-align: justify;
+    font-size: 16px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+.paper-box:hover {
+    transform: scale(1.006);
+}
+.paper-box img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+}
+.blog {
+    grid-area: blog;
+    margin: var(--main-padding);
+    text-align: justify;
+    font-size: 16px;
+}
+.contact {
+    grid-area: contact;
+    padding: var(--main-padding);
+    text-align: center;
+}
+.findme h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.findme p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+footer {
+    grid-area: footer;
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; 
+    }
+    .nav-container {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+    .menu > ul {
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 200px;
+        background-color: var(--nav-bg);
+        grid-template-columns: 1fr;
+        padding: 0;
+        z-index: 200;
+    }
+    .menu > ul.active {
+        display: block; 
+    }
+    .menu li {
+        width: 100%;
+        text-align: left;
+    }
+    .theme-toggle {
+        margin-top: 8px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .dropdownpapers {
+        display: none;
+    }
+    .menu li:hover .dropdownpapers {
+        display: none;
+    }
+    .photo img {
+        max-width: 250px;
+    }
+    .papers {
+        grid-template-columns: 1fr;
+    }
+    .paper-box img {
+        max-width: 150px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .paper-title {
+        font-size: 18px;
+    }
+    .findme h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --main-padding: 12px;
+    }
+    .menu a {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .photo img {
+        max-width: 200px;
+    }
+    .paper-box {
+        padding: 12px;
+    }
+    .paper-box img {
+        max-width: 120px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .paper-title {
+        font-size: 16px;
+    }
+    .findme h2 {
+        font-size: 18px;
+    }
+    .findme p {
+        font-size: 14px;
+    }
+    .footer {
+        font-size: 12px;
+    }
+}
