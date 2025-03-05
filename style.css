@@ -1,31 +1,33 @@
 :root {
     --main-radius: 5px;
     --main-padding: 20px;
-    --body-bg: rgb(230, 230, 215); /* Darker creamy ivory with muted pastel yellow */
-    --text-color: rgb(85, 80, 70); /* Slightly darker muted brown */
-    --nav-bg: rgb(215, 225, 230); /* Darker pastel blue with neutral undertone */
-    --menu-link: rgb(65, 70, 75); /* Darker muted slate gray */
-    --paper-bg: rgb(240, 238, 235); /* Darker soft cream */
-    --paper-text: rgb(75, 70, 65); /* Darker subtle muted brown */
-    --shadow-color: rgba(180, 185, 175, 0.4); /* Darker muted greenish shadow */
-    --dropdown-bg: rgb(125, 135, 140); /* Darker muted gray-blue */
-    --dropdown-text: rgb(170, 175, 165); /* Darker pastel-toned neutral gray */
-    --footer-bg: rgb(215, 225, 230); /* Matches nav-bg */
-    --underline-color: rgb(105, 115, 100); /* Darker muted pastel green */
+    --body-bg: rgb(230, 230, 215); 
+    --text-color: rgb(85, 80, 70); 
+    --nav-bg: rgb(215, 225, 230); 
+    --menu-link: rgb(65, 70, 75); 
+    --paper-bg: rgb(240, 238, 235); 
+    --paper-text: rgb(75, 70, 65); 
+    --link-color: rgb(31, 100, 196);
+    --shadow-color: rgba(180, 185, 175, 0.4);
+    --dropdown-bg: rgb(125, 135, 140); 
+    --dropdown-text: rgb(170, 175, 165); 
+    --footer-bg: rgb(215, 225, 230); 
+    --underline-color: rgb(105, 115, 100);
 }
 
 body.dark-theme {
-    --body-bg: rgb(30, 35, 40); /* Darker muted gray with cool tone */
-    --text-color: rgb(190, 195, 185); /* Slightly darker muted pastel beige */
-    --nav-bg: rgb(50, 60, 65); /* Darker desaturated teal */
-    --menu-link: rgb(205, 210, 200); /* Darker subtle pastel ivory */
-    --paper-bg: rgb(60, 65, 70); /* Darker muted gray-blue */
-    --paper-text: rgb(175, 180, 170); /* Darker light muted neutral */
-    --shadow-color: rgba(20, 25, 30, 0.5); /* Darker subtle shadow */
-    --dropdown-bg: rgb(80, 85, 90); /* Darker muted cool gray */
-    --dropdown-text: rgb(155, 160, 150); /* Darker desaturated pastel gray-green */
-    --footer-bg: rgb(50, 60, 65); /* Matches nav-bg */
-    --underline-color: rgb(125, 135, 120); /* Darker muted pastel green-gray */
+    --body-bg: rgb(30, 35, 40); 
+    --text-color: rgb(190, 195, 185); 
+    --nav-bg: rgb(50, 60, 65); 
+    --menu-link: rgb(205, 210, 200); 
+    --paper-bg: rgb(60, 65, 70); 
+    --paper-text: rgb(175, 180, 170); 
+    --link-color: rgb(255, 255, 255);
+    --shadow-color: rgba(20, 25, 30, 0.5); 
+    --dropdown-bg: rgb(80, 85, 90); 
+    --dropdown-text: rgb(155, 160, 150); 
+    --footer-bg: rgb(50, 60, 65); 
+    --underline-color: rgb(125, 135, 120);
 }
 
 html {
@@ -200,11 +202,8 @@ h1 {
     width: 100%;
     max-width: 200px;
 }
-.blog {
-    grid-area: blog;
-    margin: var(--main-padding);
-    text-align: justify;
-    font-size: 16px;
+.paper-box a{
+    color: var(--link-color);
 }
 .contact {
     grid-area: contact;
