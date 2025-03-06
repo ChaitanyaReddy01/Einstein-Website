@@ -182,7 +182,7 @@ h1 {
     border-bottom: 2px solid var(--underline-color);
     padding-bottom: 5px;
 }
-.paper-box {
+.paperbox {
     background-color: var(--paper-bg);
     padding: 20px;
     color: var(--paper-text);
@@ -193,16 +193,16 @@ h1 {
     transition: transform 0.3s ease-in-out, background-color 0.3s, color 0.3s;
     cursor: pointer;
 }
-.paper-box:hover {
+.paperbox:hover {
     transform: scale(1.006);
 }
-.paper-box img {
+.paperbox img {
     margin: 0 auto;
     display: block;
     width: 100%;
     max-width: 200px;
 }
-.paper-box a{
+.paperbox a{
     color: var(--link-color);
 }
 .contact {
@@ -272,7 +272,7 @@ footer {
     .papers {
         grid-template-columns: 1fr;
     }
-    .paper-box img {
+    .paperbox img {
         max-width: 150px;
     }
     h1 {
@@ -297,10 +297,10 @@ footer {
     .photo img {
         max-width: 200px;
     }
-    .paper-box {
+    .paperbox {
         padding: 12px;
     }
-    .paper-box img {
+    .paperbox img {
         max-width: 120px;
     }
     h1 {
